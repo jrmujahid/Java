@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner jamil=new Scanner(System.in);
+	  int sum=0;
+	  int finall;
+	  System.out.println("How any variables would you like to write");
+	int p=jamil.nextInt();
+		  System.out.println("for what variable , would you like your variables to be devisable");
+		  int m=jamil.nextInt();
+	for (int i=1;i<=p ;i++ ){
+	    int j=jamil.nextInt();
+	    if ((j%m)==0){
+	      
+	        sum++;
+	    } 
+	    
+	} 
+	finall = sum;
+	System.out.println("These many variables are devisable :"+finall);
+	}
+}
