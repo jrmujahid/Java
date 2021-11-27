@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner jamil=new Scanner(System.in);
+int p=jamil.nextInt();
+
+int[] myArray=new int[p];
+
+for ( int i=0;i<p;i++ ){
+    myArray[i]=jamil.nextInt();
+    
+  
+} 
+ System.out.print(Arrays.toString(myArray));
+//for second method remove Arrays.... and uncomment below part
+//  for(int i=0;i<=p;i++){
+     
+//      System.out.print(myArray[i]);
+//  }
+	}
+}
