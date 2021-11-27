@@ -1,0 +1,36 @@
+//You're given an integer N. Write a program to calculate the sum of all the digits of N.
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+Scanner jamil=new Scanner(System.in);
+int number=jamil.nextInt();
+int i;
+for (i=0;i<number;i++ )
+{
+  int numberr=jamil.nextInt();
+    int sum=0;
+    int store=0;
+
+   while(numberr!=0)
+   {
+    sum=numberr%10;
+    store=store+sum;
+    numberr=numberr/10;
+   }
+
+    System.out.println(store);
+}  
+
+
+
+	}
+}
