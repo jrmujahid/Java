@@ -1,0 +1,30 @@
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+
+    Scanner jamil = new Scanner (System.in);
+
+      System.out.println ("Enter the number to add first and last digit of it:");
+    int forLoop = 1;
+    // while(forLoop!=0)
+    for(int i=0;i<forLoop;i++)
+    {
+	int first = jamil.nextInt ();
+
+	int sum = first % 10;
+        int ssum=0;
+	while (first>0)
+	  {
+	     ssum = first % 10;
+	    first = first / 10;
+
+	  }
+	System.out.println (ssum + sum);
+      
+      }
+
+  }
+}
