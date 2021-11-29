@@ -1,0 +1,74 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Storing it in array
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner jamil=new Scanner(System.in);
+
+int i;
+	  	int scanner=jamil.nextInt();
+	  	int[] toSum=new int[10];
+	   for(i=0;i<10;i++){
+	   int sum=0;
+	   int div=0;
+	    sum=scanner%10;
+	      
+	    toSum[i]=sum; 
+	        scanner=scanner/10;   
+	
+	   }
+	   
+	   System.out.println("The result is "+Arrays.toString(toSum));
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// with for loop
+// import java.util.*;
+// public class Main
+// {
+//   public static void main (String[]args)
+//   {
+//     Scanner jamil = new Scanner (System.in);
+//     int sum = 0;
+//     int i;
+
+//     int scanner = jamil.nextInt ();
+//     for (i = 0; i <= scanner + 1; i++)
+//       {
+
+// 	sum = scanner % 10;
+// 	scanner = scanner / 10;
+// 	System.out.print (sum);
+//       }
+
+//   }
+// }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// with for loop
+// import java.util.*;
+// public class Main
+// {
+//   public static void main (String[]args)
+//   {
+//     Scanner jamil = new Scanner (System.in);
+//     int sum = 0;
+//     int i;
+
+//     int scanner = jamil.nextInt ();
+//     while(scanner!=0)
+//       {
+
+// 	sum = scanner % 10;
+// 	scanner = scanner / 10;
+// 	System.out.print (sum);
+//       }
+
+//   }
+// }
+
+
