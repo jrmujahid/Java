@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+
+    Scanner jamil = new Scanner (System.in);
+
+
+    int toAdd = jamil.nextInt ();
+    int toAddd = jamil.nextInt ();
+    int remain=toAdd;
+    int sum=1;
+while(toAddd>0){
+    sum=sum*remain;
+   
+    toAddd--;
+  
+}
+System.out.println(sum); 
+
+  }
+}
