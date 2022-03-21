@@ -1,0 +1,17 @@
+import java.util.*;
+
+class main {
+
+    public static void main(String[] args) {
+        Scanner jamil = new Scanner(System.in);
+        System.out.println("\n\nit is Buy 2 get 1 free offer plzz enter count of your items");
+        
+        int count=jamil.nextInt();
+        int price=jamil.nextInt();
+        int divisionOf=count/3;
+        int reminder=count-divisionOf;
+        int finalResult=reminder*price;
+        System.out.println(finalResult);
+
+    }
+}
