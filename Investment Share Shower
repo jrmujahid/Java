@@ -1,0 +1,30 @@
+import java.util.*;
+
+class main {
+
+    public static void main(String[] args) {
+        Scanner jamil = new Scanner(System.in);
+        System.out.println("Share of each individual along with profit");
+        System.out.println("\nHow many people Hold Shares of this company");
+        int count = jamil.nextInt();
+        int sum = 0;
+        int[] investMoney = new int[count];
+        for (int i = 0; i < count; i++) {
+            System.out.println("Number " + (i + 1));
+            int share = jamil.nextInt();
+            investMoney[i] = share;
+            sum = sum + share;
+
+        }
+        System.out.println("This  " + sum + "is overall investment" + " \n\t\t\t\t Now put the monthly profit");
+        int profit = jamil.nextInt();
+        float summ = sum;
+        float percentage = profit / summ;
+        System.out.println(percentage);
+        for (int j = 0; j < investMoney.length; j++) {
+            float profitshareIs = investMoney[j] * percentage;
+            System.out.println("\nProfit of " + investMoney[j] + " is: " + profitshareIs);
+        }
+
+    }
+}
