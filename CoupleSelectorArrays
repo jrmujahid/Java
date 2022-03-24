@@ -1,0 +1,47 @@
+
+//filling two arrays then adding it into third array while every digit of first array should be added with all the digits of second array
+
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.IntStream;
+
+class Mainn {
+
+    public static void main(String[] args) {
+        Scanner jamil = new Scanner(System.in);
+        System.out.println("\n\n Highest heighest of couple: ");
+
+        System.out.println("\n What is count of Pairs: ");
+        int askit = jamil.nextInt();
+
+        int[] boy = new int[askit];
+
+        int[] girl = new int[askit];
+        int[] togetherThey = new int[(int) Math.pow(askit, 2)];
+        int myname = togetherThey.length;
+        
+        for (int i = 0; i < askit; i++) {
+            System.out.println("\n Height of boys: ");
+             boy[i] = jamil.nextInt();
+              System.out.println("\n Height of Girls: ");
+                girl[i] = jamil.nextInt();
+
+        }
+
+        for (int m = 0; m < boy.length; m++) {
+            for (int k = 0; k < girl.length; k++) {
+                togetherThey[--myname] = girl[k] + boy[m];
+
+            }
+
+        }
+        System.out.println("\nMultiplication of boys and girls: " + Arrays.toString(togetherThey));
+          IntStream intStream = Arrays.stream(togetherThey);
+             OptionalInt optionalInt = intStream.max();
+                int maxAsInt = optionalInt.getAsInt();
+ 
+                  System.out.println("Maximum number = " + maxAsInt);
+    }
+
+   
+}
