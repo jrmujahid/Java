@@ -1,0 +1,42 @@
+
+import java.util.*;
+
+
+class Mainn {
+
+    public static void main(String[] args) {
+        Scanner jamil = new Scanner(System.in);
+        System.out.println("\n\n Start of the game: ");
+
+        int[] outline = new int[3];
+
+        for (int i = 0; i < outline.length; i++) {
+            System.out.println("\n 1:Player count 2:Drug Amount 3:Max amoount ");
+            outline[i] = jamil.nextInt();
+
+        }
+        int[] playersSpeed = new int[outline[0]];
+        for (int j = 0; j < playersSpeed.length; j++) {
+            System.out.println("\n Player Number: " + (j + 1));
+            playersSpeed[j] = jamil.nextInt();
+
+        }
+        int lastNumber = playersSpeed[playersSpeed.length - 1] * outline[1];
+        int toask = 0;
+
+        for (int m = 0; m < playersSpeed.length; m++) {
+
+            if (playersSpeed[m] >= lastNumber) {
+                toask = playersSpeed[m];
+            }
+
+        }
+        if (lastNumber > toask) {
+            System.out.println("yes");
+        } else if (lastNumber >= toask || toask == 0 || outline[1]<0) {
+            System.out.println("NO");
+        }
+
+    }
+
+}
