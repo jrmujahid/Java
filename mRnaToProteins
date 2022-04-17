@@ -1,0 +1,146 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.*;
+
+class Main {
+    static Scanner jamil = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.println("Please Enter your sequence");
+        String mRna = jamil.nextLine();
+        List arrayForSequence = Arrays.asList("UUU", "UUC", "UUA", "UUG", "UCU", "UCC", "UCA", "UCG", "UAU", "UAC",
+                "UGU",
+                "UGC", "UGG", "CUU", "CUC", "CUA", "CUG", "CCU", "CCC", "CCA", "CCG", "CAU", "CAC", "CAA", "CAG", "CGU",
+                "CGC", "CGA", "CGG", "AUU",
+                "AUC", "AUA", "ACU", "ACC", "ACA", "ACG", "AAU", "AAC", "AAA",
+                "AUG", "AAG",
+                "AGU", "AGC", "AGA", "AGG", "GUU", "GUC", "GUA", "GUG",
+                "GCU", "GCC", "GCA", "GCG", "GAU", "GAC", "GAA", "GAG",
+                "GGU", "GGC", "GGA", "GGG");
+        int wordSize = 3;
+
+        // By using regex method the given sequence is broken into 3
+
+        String[] chunkDivision = mRna.split("(?<=\\G.{" + wordSize + "})");
+        String startCodon = "AUG";
+        String result = "";
+        String[] participents = new String[chunkDivision.length]; // SAME SIZE WITH CHUNKSIZE
+
+        // ALL THE PARTICAPENTS MRNA CODONS IS DETECTED AND PLACED IN SEPARATE ARRAY
+
+        for (int i = 0; i < chunkDivision.length; i++) {
+            if (arrayForSequence.contains(chunkDivision[i])) {
+                participents[i] = chunkDivision[i];
+
+            }
+        }
+        // COMPLETE FILTERED VALUES ALONG WITH NULL VALUES
+        // System.out.println(Arrays.toString(participents));
+
+        // NOW REMOVING NULL VALUES FROM THE PARTICAPENTS ARRAY
+        // FIRST CHANGING ARRAY INTO LIST
+
+        List<String> list = Arrays.asList(participents);
+
+        // WIHT JAVA 8 THERE IS NEW WAY OF REMOVING SPECIFIC THING FROM LIST(copied from
+        // stackoverflow)
+
+        list = list.stream().filter(t -> t != null).collect(Collectors.toList());
+
+        // CHANGING LIST BACK INTO ARRAY
+        String[] myArray = new String[list.size()];
+        list.toArray(myArray);
+
+        for (int i = 0; i < myArray.length; i++) {
+
+            if (myArray[i].equals("UUC") || myArray[i].equals("UUU")) {
+                myArray[i] = "Phe";
+            }
+
+            else if (myArray[i].equals("UUC") || myArray[i].equals("UUU")) {
+                myArray[i] = "Phe";
+            } else if (myArray[i].equals("UUA") || myArray[i].equals("UUG")) {
+                myArray[i] = "Leu";
+            } else if (myArray[i].equals("UCU") || myArray[i].equals("UCC") || myArray[i].equals("UCA")
+                    || myArray[i].equals("UCG") || myArray[i].equals("AGU") || myArray[i].equals("AGC")) {
+                myArray[i] = "Ser";
+            } else if (myArray[i].equals("UAU") || myArray[i].equals("UAC")) {
+                myArray[i] = "Tyr";
+            } else if (myArray[i].equals("UGU") || myArray[i].equals("UGC")) {
+                myArray[i] = "Cys";
+            } else if (myArray[i].equals("UGG")) {
+                myArray[i] = "Trp";
+            } else if (myArray[i].equals("CUU") || myArray[i].equals("CUC") || myArray[i].equals("CUA")
+                    || myArray[i].equals("CUG")) {
+                myArray[i] = "Leu";
+            } else if (myArray[i].equals("CCU") || myArray[i].equals("CCC") || myArray[i].equals("CCA")
+                    || myArray[i].equals("CCG")) {
+                myArray[i] = "Pro";
+            } else if (myArray[i].equals("CAU") || myArray[i].equals("CAC")) {
+                myArray[i] = "His";
+            } else if (myArray[i].equals("CAA") || myArray[i].equals("CAG")) {
+                myArray[i] = "Gln";
+            } else if (myArray[i].equals("CGU") || myArray[i].equals("CGC") || myArray[i].equals("CGA")
+                    || myArray[i].equals("CGG")) {
+                myArray[i] = "Arg";
+            } else if (myArray[i].equals("AUU") || myArray[i].equals("AUC") || myArray[i].equals("AUA")) {
+                myArray[i] = "Ile";
+            } else if (myArray[i].equals("AUG")) {
+                myArray[i] = "Met";
+            } else if (myArray[i].equals("ACU") || myArray[i].equals("ACC") || myArray[i].equals("ACA")
+                    || myArray[i].equals("ACG")) {
+                myArray[i] = "Thr";
+            } else if (myArray[i].equals("AAU") || myArray[i].equals("AAC")) {
+                myArray[i] = "Asn";
+            } else if (myArray[i].equals("AAA") || myArray[i].equals("AAG")) {
+                myArray[i] = "Lys";
+            } else if (myArray[i].equals("AAU") || myArray[i].equals("AAC")) {
+                myArray[i] = "Asn";
+            } else if (myArray[i].equals("GUU") || myArray[i].equals("GUC") || myArray[i].equals("GUA")
+                    || myArray[i].equals("GUG")) {
+                myArray[i] = "Val";
+            } else if (myArray[i].equals("GCU") || myArray[i].equals("GCC") || myArray[i].equals("GCA")
+                    || myArray[i].equals("GCG")) {
+                myArray[i] = "Ala";
+            } else if (myArray[i].equals("GAU") || myArray[i].equals("GAC")) {
+                myArray[i] = "Asp";
+            } else if (myArray[i].equals("GAA") || myArray[i].equals("GAG")) {
+                myArray[i] = "Glu";
+            } else if (myArray[i].equals("GGU") || myArray[i].equals("GGC") || myArray[i].equals("GGA")
+                    || myArray[i].equals("GGG")) {
+                myArray[i] = "Gly";
+            }
+        }
+
+        for (String finalPrint : myArray) {
+            System.out.print(finalPrint + "-");
+        }
+
+        // for (int i = 0; i < list.size(); i++) {
+        // if (list.get(i) == "UUC" || list.get(i) == "UUU") {
+        // list.set(i,"Phe");
+        // }
+        // else if (list.get(i) == "UUA" || list.get(i) == "UUG") {
+        // list.set(i, "Leu");
+        // } else if (list.get(i) == "UCU" || list.get(i) == "UCC" || list.get(i) ==
+        // "UCA" || list.get(i) == "UCG") {
+        // list.set(i, "Ser");
+        // }
+
+        // }
+
+        // NOW PUTTING CONDITION THAT LOOP CONVERSION SHOULD BE STARTED FROM *AUG
+        // EVERYTHING BEFORE THAT SHOULD BE IGNORED
+
+        // int w=0;
+        // int c=0;
+        // while (myArray[w]!="AUG") {
+        // w++;
+        // c=c+w;
+        // }
+        // System.out.println(c);
+    }
+}
